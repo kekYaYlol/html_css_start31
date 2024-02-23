@@ -6,6 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    Hello world!
+    <canvas id="canvas" width="600" height="600" onclick="onCanvasClick(event)">
+
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        function onCanvasClick (e){
+            console.log(e.clientX, e.clientY);
+            ctx.fillStyle = '#fc2403';
+            ctx.beginPath();
+            ctx.arc(e.clientX, e.clientY, 50, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+    </script>
+
 </body>
 </html>
